@@ -26,7 +26,6 @@ public class SettingsChangeRequestAssemblerTest {
         String mockRequesterUsername = "mockUsername";
         String mockBusiness = "mockBusiness";
         String mockCreationTimestamp = "2023-07-11 12:34:56";
-        String mockId = "mockId";
         ChangeRequestType mockChangeRequestType = ChangeRequestType.ADD;
         SettingsItem mockSettingsItem = new SettingsItem();
 
@@ -36,7 +35,7 @@ public class SettingsChangeRequestAssemblerTest {
         when(mockChangeRequest.getRequester().getUsername()).thenReturn(mockRequesterUsername);
         when(mockChangeRequest.getRequester().getBusiness()).thenReturn(mockBusiness);
         when(mockChangeRequest.getCreation().toString()).thenReturn(mockCreationTimestamp);
-        when(mockChangeRequest.getId()).thenReturn(mockId);
+        when(mockChangeRequest.getId()).thenReturn(null); // Simulate getId() returning null
         when(mockChangeRequest.getChangeRequestType()).thenReturn(mockChangeRequestType);
         when(mockChangeRequest.getItems()).thenReturn(Collections.singletonList(mockSettingsItem));
 
